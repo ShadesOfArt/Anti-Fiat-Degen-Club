@@ -14,9 +14,9 @@
         <img src="Logo Test.png" class="logo">
         <nav>
           <ul>
-            <li><a href="theclub.html">Opensea</a></li>
+            <li><a href="https://opensea.io/de-DE/collection/anti-fiat-degen-club">Opensea</a></li>
             <li><a href="https://twitter.com/AFDCnft">Twitter</a></li>
-            <li><a href="theclub.html">Etherscan</a></li>
+            <li><a href="https://etherscan.io/address/0xd0209da49cafb045ad56e78ed7d39d5a632d8c3a">Etherscan</a></li>
             <li><a href="theclub.html">The Club</a></li>
           
           
@@ -25,7 +25,41 @@
         
       </div>
     </div>
+    
 
 
   </body>
+</html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Deploying Counter to Polygon</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.nin.js"></script>
+</head>
+<body>
+  <div>
+    <p>Wallet adress - <span id="wallet-adress"></span></p>
+    <button id="Mint">Mint your AFDC</button>
+  </div> 
+  <script type="text/javascript">
+
+    var account = null;
+    var contract =null;
+    const ABI = [];
+    const ADRESS ="0x18af1a428d500FC5aBE53Fb85c098054A241f68c"
+    (async () => {
+      if (window.ethereum) {
+        await window.ethereum.send("eth_requestAccounts");
+        window.web3 = new Web3(window.ethereum);
+
+        var accounts = await web3.eth.getAccounts();
+        account = accounts[0];
+        document.getElementById("wallet-adress") .textContent = account;
+          
+        
+      }
+    })();
+  </script>
+</body>
 </html>
